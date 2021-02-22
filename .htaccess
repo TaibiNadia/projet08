@@ -7,6 +7,8 @@
 SetEnv HTTP_MOD_REWRITE On 
 #</IfModule>
 RewriteEngine on
+RewriteBase /prestashop
+
 
 #Domain: localhost:8002
 RewriteRule . - [E=REWRITEBASE:/prestashop/]
