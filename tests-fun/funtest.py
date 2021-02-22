@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 import time
 import unittest
 from selenium.webdriver.chrome.options import Options as ChromeOptions
-from xmlrunner import XMLTestRunner
+import xmlrunner
 
 class LoginTest(unittest.TestCase):
     
