@@ -10,19 +10,19 @@ pipeline {
         }*/
         stage('Build') {
             steps { 
-                sh 'docker build -f Dockerfile -t prestashop .'
+                sh 'docker build -t prestashop .'
                 /*sh 'docker build -f Dockerfile.db -t mysqldb .' */
             }
         }
         stage('Services') {
             steps { 
-                sh 'docker-compose up'
+                sh 'docker-compose up -d'
             }
         }
        
         stage('Tests_fonctionnels') {
             steps { 
-                sh 'python fun-test/funtest.py'
+                sh 'python ./fun-test/funtest.py'
             }
         }
     }
