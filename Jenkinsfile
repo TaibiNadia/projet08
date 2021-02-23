@@ -22,7 +22,7 @@ pipeline {
        
         stage('Tests_fonctionnels') {
             steps { 
-                sh 'python ./tests-fun/funtest.py'
+                sh 'python3 ./tests-fun/funtest.py'
             }
         }
     }
