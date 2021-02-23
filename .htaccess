@@ -3,18 +3,11 @@
 # http://www.prestashop.com - http://www.prestashop.com/forums
 
 <IfModule mod_rewrite.c> 
-#<IfModule mod_env.c> 
+<IfModule mod_env.c> 
 SetEnv HTTP_MOD_REWRITE On 
-#</IfModule>
+</IfModule>
 RewriteEngine on
 RewriteBase /prestashop
-#############
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
-################
-
-
 
 #Domain: localhost:8002
 RewriteRule . - [E=REWRITEBASE:/prestashop/]
