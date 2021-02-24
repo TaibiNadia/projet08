@@ -13,7 +13,7 @@ services:
 
   mysqldb:
     image: mysql:5.7.31
-    
+    restart: always
     ports:
       - 3308:3306
     environment:
@@ -23,7 +23,7 @@ services:
       MYSQL_PASSWORD: +QAY2wsx3edc
     volumes:
       - db_data:/var/lib/mysql
-      - dump.sql:/docker-entrypoint-initdb.d/dump.sql
+      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
       
 volumes:
    dump.sql:
