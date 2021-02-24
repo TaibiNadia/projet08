@@ -21,12 +21,10 @@ class LoginTest(unittest.TestCase):
         #self.driver.save_screenshot("toto.png")
         
     def test_create_login (self):
-        #self.driver.get("http://10.10.20.76:8002/index.php?controller=authentication&back=my-account")
         self.driver.get("http://10.10.20.76:8002/index.php?controller=authentication&create_account=1")
-        #self.driver.get("http://10.10.20.71:8001/login?back=my-account")
-        self.driver.find_element_by_name("email").send_keys("bb@gmail.com")
-        self.driver.find_element_by_name("password").send_keys("BB@3841")
-        self.driver.find_element_by_partial_link_text("No account?").click()
+        #self.driver.find_element_by_name("email").send_keys("bb@gmail.com")
+        #self.driver.find_element_by_name("password").send_keys("BB@3841")
+        #self.driver.find_element_by_partial_link_text("No account?").click()
         self.driver.find_element_by_name("id_gender").send_keys("2")
         self.driver.find_element_by_name("firstname").send_keys("test")
         self.driver.find_element_by_name("lastname").send_keys("test")
@@ -35,7 +33,9 @@ class LoginTest(unittest.TestCase):
         self.driver.find_element_by_name("optin").send_keys("1")
         self.driver.find_element_by_name("newsletter").send_keys("1")
         self.driver.find_element_by_name("psgdpr").send_keys("1")
-        self.assertIn("Create an account", self.driver.page_source)
+        #self.assertIn("Create an account", self.driver.page_source)
+        results = self.driver.find_elements_by_tag_name("h1")
+        self.assertTrue(results)
         self.driver.find_element_by_class_name("btn-primary").click()
         time.sleep(2)
 
