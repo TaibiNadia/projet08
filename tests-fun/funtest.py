@@ -33,9 +33,9 @@ class LoginTest(unittest.TestCase):
         self.driver.find_element_by_name("optin").send_keys("1")
         self.driver.find_element_by_name("newsletter").send_keys("1")
         self.driver.find_element_by_name("psgdpr").send_keys("1")
-        #self.assertIn("Create an account", self.driver.page_source)
-        results = self.driver.find_elements_by_tag_name("h1")
-        self.assertTrue(results)
+        self.assertIn("Create an account", self.driver.page_source)
+        #results = self.driver.find_elements_by_tag_name("h1")
+        #self.assertTrue(results)
         self.driver.find_element_by_class_name("btn-primary").click()
         time.sleep(2)
 
