@@ -22,8 +22,9 @@ services:
       MYSQL_USER: prestashopuser
       MYSQL_PASSWORD: +QAY2wsx3edc
     volumes:
-      - dump.sql:/docker-entrypoint-initdb.d/dump.sql
       - db_data:/var/lib/mysql
+      - dump.sql:/docker-entrypoint-initdb.d/dump.sql
+      
 volumes:
    dump.sql:
    db_data:
