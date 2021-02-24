@@ -21,7 +21,8 @@ class LoginTest(unittest.TestCase):
         #self.driver.save_screenshot("toto.png")
         
     def test_create_login (self):
-        self.driver.get("http://10.10.20.76:8002/index.php?controller=authentication&back=my-account")
+        #self.driver.get("http://10.10.20.76:8002/index.php?controller=authentication&back=my-account")
+        self.driver.get("http://10.10.20.76:8002/index.php?controller=authentication&create_account=1")
         #self.driver.get("http://10.10.20.71:8001/login?back=my-account")
         self.driver.find_element_by_name("email").send_keys("bb@gmail.com")
         self.driver.find_element_by_name("password").send_keys("BB@3841")
