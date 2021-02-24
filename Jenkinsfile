@@ -20,19 +20,19 @@ pipeline {
             }
         }
        
-        stage('Tests_fonctionnels') {
+        /*stage('Tests_fonctionnels') {
             steps { 
                 sh 'python3 ./tests-fun/funtest.py'
             }
-        }
+        }*/
     }
         
-    post ('Test_Results') {
+    /*post ('Test_Results') {
             always {
                 echo 'I will always execute this!'
                 junit skipPublishingChecks: true, keepLongStdio: true, testResults: 'reports/*.xml' 
               
             }    
-    }  
+    } */ 
        
 }
