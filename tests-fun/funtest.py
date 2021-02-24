@@ -38,15 +38,15 @@ class LoginTest(unittest.TestCase):
         self.driver.find_element_by_class_name("btn-primary").click()
         time.sleep(2)
 
-    def test_login_valid (self):
-        self.driver.get("http://10.10.20.76:8002/index.php?controller=authentication&back=my-account")
-        #self.driver.get("http://10.10.20.76:8001/login?back=my-account")
-        self.driver.find_element_by_name("email").send_keys("mm@gmail.com")
-        self.driver.find_element_by_name("password").send_keys("MM@3841")
-        self.driver.find_element_by_id("submit-login").click()
-        self.assertNotIn("Authentication failed.", self.driver.page_source)
-        self.driver.find_element_by_class_name("logout").click()
-        time.sleep(2)
+    #def test_login_valid (self):
+    #    self.driver.get("http://10.10.20.76:8002/index.php?controller=authentication&back=my-account")
+    #    #self.driver.get("http://10.10.20.76:8001/login?back=my-account")
+    #    self.driver.find_element_by_name("email").send_keys("mm@gmail.com")
+    #    self.driver.find_element_by_name("password").send_keys("MM@3841")
+    #    self.driver.find_element_by_id("submit-login").click()
+    #    self.assertNotIn("Authentication failed.", self.driver.page_source)
+    #    self.driver.find_element_by_class_name("logout").click()
+    #    time.sleep(2)
 
     def test_search_page (self):
         search_query = "mug"
