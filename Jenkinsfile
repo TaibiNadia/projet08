@@ -16,14 +16,16 @@ pipeline {
         }
         stage('Services') {
             steps { 
-                sh 'docker-compose up -d'
-            }
+                    sh 'docker-compose up -d'
+                }
         }
        
         stage('Tests_fonctionnels') {
-            steps { 
-                sh 'python3 ./tests-fun/funtest.py'
-            }
+            wrap([$class: 'Xvfb']) {
+                steps {
+                    sh 'python3 ./tests-fun/funtest.py'
+                }
+            } 
         }
     }
         
