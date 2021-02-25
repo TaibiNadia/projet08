@@ -19,7 +19,9 @@ pipeline {
                     sh 'docker-compose up -d'
                 }
         }
-       
+    
+    }   
+    stages {
         stage('Tests_fonctionnels') {
             wrap([$class: 'Xvfb']) {
                 steps {
