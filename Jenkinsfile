@@ -23,11 +23,11 @@ pipeline {
     }   
     stages {
         stage('Tests_fonctionnels') {
-            wrap([$class: 'Xvfb']) {
+            
                 steps {
                     sh 'python3 ./tests-fun/funtest.py'
                 }
-            } 
+             
         }
     }
         
