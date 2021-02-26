@@ -20,8 +20,8 @@ pipeline {
                 }
         }
     
-    }   
-    stages {
+       
+    
         stage('Tests_fonctionnels') {
             
                 steps {
