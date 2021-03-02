@@ -25,7 +25,7 @@ pipeline {
         stage('Tests_fonctionnels') {
             
                 steps {
-                    tool name: 'Xvfb', type: 'org.jenkinsci.plugins.xvfb.XvfbInstallation'
+                    sh 'sleep 3m'
                     sh 'python3 ./tests-fun/funtest.py'
                 }
              
