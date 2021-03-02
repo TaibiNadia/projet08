@@ -4,11 +4,9 @@ pipeline {
     stages {
         stage('Test_unitaire') {
             steps {
-                sh 'mkdir testunitaire'
-                sh 'cd testunitaire'
                 sh 'git clone https://github.com/TaibiNadia/PrestaShop.git'
                 sh 'cd PrestaShop'
-                sh 'composer install -n'
+                sh 'composer -d ./PrestaShop install -n'
                 sh 'SYMFONY_DEPRECATIONS_HELPER=disabled composer unit-tests'
             }
         }
