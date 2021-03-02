@@ -22,6 +22,7 @@ class LoginTest(unittest.TestCase):
         
     def test_create_login (self):
         self.driver.get("http://10.10.20.76:8002/index.php?controller=authentication&back=my-account")
+        time.sleep(5)
         self.driver.find_element_by_name("email").send_keys("bb@gmail.com")
         self.driver.find_element_by_name("password").send_keys("BB@3841")
         self.driver.find_element_by_partial_link_text("No account?").click()
