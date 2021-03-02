@@ -5,9 +5,10 @@ pipeline {
         stage('Test_unitaire') {
             steps {
                 sh 'git clone https://github.com/TaibiNadia/PrestaShop.git'
-                sh 'cd PrestaShop'
-                sh 'composer -d ./PrestaShop install -n'
-                sh 'SYMFONY_DEPRECATIONS_HELPER=disabled composer unit-tests'
+                dir('PrestaShop') {
+                    sh 'composer  install -n'
+                    sh 'SYMFONY_DEPRECATIONS_HELPER=disabled composer unit-tests'
+                }
             }
         }
         stage('Build') {
