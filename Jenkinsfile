@@ -2,12 +2,16 @@ pipeline {
     agent { node { label 'ubuntu_slave' } }
     
     stages {
-        /*stage('Test_unitaire') {
+        stage('Test_unitaire') {
             steps {
+                sh 'mkdir testunitaire'
+                sh 'cd testunitaire'
+                sh 'git clone https://github.com/TaibiNadia/PrestaShop.git'
+                sh 'cd PrestaShop'
                 sh 'composer install -n'
                 sh 'SYMFONY_DEPRECATIONS_HELPER=disabled composer unit-tests'
             }
-        }*/
+        }
         stage('Build') {
             steps { 
                 sh 'docker build -t prestashop .'
@@ -25,7 +29,7 @@ pipeline {
         stage('Tests_fonctionnels') {
             
                 steps {
-                    sh 'sleep 3m'
+                    sh 'sleep 1m'
                     sh 'python3 ./tests-fun/funtest.py'
                 }
              
